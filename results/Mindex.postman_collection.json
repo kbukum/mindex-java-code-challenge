@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "a2f2d2a9-8bd4-4fb2-b9d3-e1a2f045d868",
+		"name": "Mindex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employee Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\" : \"16a596ae-edd3-4847-99fe-c4518e82c86c\",\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Lennon\",\n    \"position\" : \"Development Manager\",\n    \"department\" : \"Engineering\",\n    \"directReports\" : [\n      {\n        \"employeeId\" : \"b7839309-3348-463b-a7e3-5de1c168beb3\"\n      },\n      {\n        \"employeeId\": \"03aa1462-ffa9-4978-901b-7c001562cf6f\"\n      }\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employee",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/employee/16a596ae-edd3-4847-99fe-c4518e82c86f",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employee",
+						"16a596ae-edd3-4847-99fe-c4518e82c86f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\" : \"16a596ae-edd3-4847-99fe-c4518e82c86c\",\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Lennon\",\n    \"position\" : \"Development Manager\",\n    \"department\" : \"Engineering\",\n    \"directReports\" : [\n      {\n        \"employeeId\" : \"b7839309-3348-463b-a7e3-5de1c168beb3\"\n      },\n      {\n        \"employeeId\": \"03aa1462-ffa9-4978-901b-7c001562cf6f\"\n      }\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employee/16a596ae-edd3-4847-99fe-c4518e82c86f",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employee",
+						"16a596ae-edd3-4847-99fe-c4518e82c86f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reporting Structure",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/reportingStructure/16a596ae-edd3-4847-99fe-c4518e82c86f",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"reportingStructure",
+						"16a596ae-edd3-4847-99fe-c4518e82c86f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compensation Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employee\": {\n    \"employeeId\" : \"16a596ae-edd3-4847-99fe-c4518e82c86f\",\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Lennon\",\n    \"position\" : \"Development Manager\",\n    \"department\" : \"Engineering\",\n    \"directReports\" : [\n      {\n        \"employeeId\" : \"b7839309-3348-463b-a7e3-5de1c168beb3\"\n      },\n      {\n        \"employeeId\": \"03aa1462-ffa9-4978-901b-7c001562cf6f\"\n      }\n    ]\n  },\n  \"salary\": 1000000,\n  \"effectiveDate\": null\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/compensation",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"compensation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compensation Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/compensation/16a596ae-edd3-4847-99fe-c4518e82c86f",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"compensation",
+						"16a596ae-edd3-4847-99fe-c4518e82c86f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

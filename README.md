@@ -84,3 +84,24 @@ Compensation from the persistence layer.
 
 ## Delivery
 Please upload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
+
+
+## Task Results
+
+* Mindex.postman_collection can be found under of results folder as a json file. 
+* Both of task completed the result shared as below. 
+
+### Task 1
+
+![GitHub Logo](results/reporting_structure_read.png)
+
+
+### Task 2
+
+#### Compensation Create 
+
+![GitHub Logo](results/compensation_create.png)
+
+#### Compensation Read
+
+![GitHub Logo](results/compensation_read.png)
