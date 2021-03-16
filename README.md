@@ -93,10 +93,59 @@ Please upload your results to a publicly accessible Git repo. Free ones are prov
 
 ### Task 1
 
+
+```
+* READ
+    * HTTP Method: GET
+    * URL: localhost:8080/reportingStructure/{employeeId}
+    * RESPONSE: ReportingStructure
+```
+
+* The ReportingStructure has a JSON schema of:
+```json
+{
+  "type":"ReportingStructure",
+  "properties": {
+    "employee": {
+      "employeeId": "string"
+    },
+    "numberOfReports": "number"
+  }
+}
+```
+
 ![GitHub Logo](results/reporting_structure_read.png)
 
 
 ### Task 2
+
+```
+* CREATE
+    * HTTP Method: POST 
+    * URL: localhost:8080/compensation
+    * PAYLOAD: Employee
+    * RESPONSE: Employee
+* READ
+    * HTTP Method: GET 
+    * URL: localhost:8080/compensation/{employeeId}
+    * RESPONSE: Employee
+```
+
+The Compensation has a JSON schema of:
+
+```json
+{
+  
+  "type":"Compensation",
+  "properties": {
+    "employee": {
+      "employeeId": "string"
+    },
+    "salary": "number",
+    "effectiveDate": "number"
+  }
+}
+```
 
 #### Compensation Create 
 
