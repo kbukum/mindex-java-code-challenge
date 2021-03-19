@@ -7,7 +7,7 @@ import java.util.Date;
 public class Compensation {
     private String compensationId;
     private Employee employee;
-    private long salary;
+    private double salary;
     @JsonFormat(pattern = "MM/dd/yyyy")
     private Date effectiveDate;
 
@@ -30,11 +30,11 @@ public class Compensation {
         this.employee = employee;
     }
 
-    public long getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(long salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
