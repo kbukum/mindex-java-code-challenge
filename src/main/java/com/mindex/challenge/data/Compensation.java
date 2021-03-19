@@ -1,13 +1,25 @@
 package com.mindex.challenge.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Compensation {
+    private String compensationId;
     private Employee employee;
-    private Integer salary;
+    private long salary;
+    @JsonFormat(pattern = "MM/dd/yyyy")
     private Date effectiveDate;
 
     public Compensation() {
+    }
+
+    public String getCompensationId() {
+        return compensationId;
+    }
+
+    public void setCompensationId(String compensationId) {
+        this.compensationId = compensationId;
     }
 
     public Employee getEmployee() {
@@ -18,11 +30,11 @@ public class Compensation {
         this.employee = employee;
     }
 
-    public Integer getSalary() {
+    public long getSalary() {
         return salary;
     }
 
-    public void setSalary(Integer salary) {
+    public void setSalary(long salary) {
         this.salary = salary;
     }
 

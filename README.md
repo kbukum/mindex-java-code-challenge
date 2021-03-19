@@ -97,7 +97,7 @@ Please upload your results to a publicly accessible Git repo. Free ones are prov
 ```
 * READ
     * HTTP Method: GET
-    * URL: localhost:8080/reportingStructure/{employeeId}
+    * URL: localhost:8080/employee/numberOfReports/{employeeId}
     * RESPONSE: ReportingStructure
 ```
 
@@ -114,8 +114,7 @@ Please upload your results to a publicly accessible Git repo. Free ones are prov
 }
 ```
 
-![GitHub Logo](results/reporting_structure_read.png)
-
+![GitHub Logo](docs/reporting_structure_read.png)
 
 ### Task 2
 
@@ -123,12 +122,22 @@ Please upload your results to a publicly accessible Git repo. Free ones are prov
 * CREATE
     * HTTP Method: POST 
     * URL: localhost:8080/compensation
-    * PAYLOAD: Employee
-    * RESPONSE: Employee
+    * PAYLOAD: Compensation
+    * RESPONSE: Compensation
+* UPDATE
+    * HTTP Method: PUT 
+    * URL: localhost:8080/compensation/{id}
+    * PAYLOAD: Compensation
+    * RESPONSE: Compensation
 * READ
     * HTTP Method: GET 
-    * URL: localhost:8080/compensation/{employeeId}
-    * RESPONSE: Employee
+    * URL: localhost:8080/compensation/read/{employeeId}
+    * RESPONSE: Compensation
+* READ by EmployeeId
+    * HTTP Method: GET 
+    * URL: localhost:8080/compensation/read/{employeeId}
+    * RESPONSE: Array<Compensation>
+
 ```
 
 The Compensation has a JSON schema of:
@@ -142,15 +151,24 @@ The Compensation has a JSON schema of:
       "employeeId": "string"
     },
     "salary": "number",
-    "effectiveDate": "number"
+    "effectiveDate": "string(MM/dd/YYYY)"
   }
 }
 ```
 
 #### Compensation Create 
 
-![GitHub Logo](results/compensation_create.png)
+![GitHub Logo](docs/mindex_compensation_create.png)
 
 #### Compensation Read
 
-![GitHub Logo](results/compensation_read.png)
+![GitHub Logo](docs/mindex_compensation_get_by_id.png)
+
+
+#### Compensation Update
+
+![GitHub Logo](docs/mindex_compensation_update.png)
+
+#### Compensation Read By Employee Id
+
+![GitHub Logo](docs/mindex_compensation_get_by_eployee_id.png)

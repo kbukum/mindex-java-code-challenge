@@ -9,6 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CompensationServiceImpl implements CompensationService {
@@ -22,12 +26,34 @@ public class CompensationServiceImpl implements CompensationService {
     @Override
     public Compensation create(Compensation compensation) {
         LOG.debug("Creating compensation [{}]", compensation);
+        compensation.setCompensationId(UUID.randomUUID().toString());
         compensationRepository.insert(compensation);
         return compensation;
     }
 
     @Override
-    public Compensation readByEmployeeId(String employeeId) {
+    public Compensation read(String id) {
+        LOG.debug("Reading Compensation with id [{}]", id);
+        Compensation compensation = compensationRepository.findByCompensationId(id);
+
+        if (compensation == null) {
+            throw new RuntimeException("Invalid compensationId: " + id);
+        }
+        return compensation;
+    }
+
+    @Override
+    public Compensation update(Compensation compensation) {
+        if (compensation.getEmployee() == null || StringUtils.isEmpty(compensation.getEmployee().getEmployeeId())) {
+            throw new RuntimeException("Invalid Compensation");
+        }
+        LOG.debug("Creating compensation [{}]", compensation);
+        compensationRepository.insert(compensation);
+        return compensation;
+    }
+
+    @Override
+    public List<Compensation> readByEmployeeId(String employeeId) {
         LOG.debug("Reading Compensation by employeeId [{}]", employeeId);
 
         Employee employee = employeeRepository.findByEmployeeId(employeeId);
@@ -36,12 +62,6 @@ public class CompensationServiceImpl implements CompensationService {
             throw new RuntimeException("Invalid Employee by the given employeeId: " + employeeId);
         }
 
-        Compensation compensation = compensationRepository.findByEmployee(employee);
-
-        if (compensation == null) {
-            throw new RuntimeException("Invalid compensation by the given employeeId: " + employeeId);
-        }
-
-        return compensation;
+        return compensationRepository.findByEmployee(employee);
     }
 }
